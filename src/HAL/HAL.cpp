@@ -4,17 +4,29 @@
 #include "main.h"
 
 /*** Component objects ***/
-Pixel rgb;
+
 static MillisTaskManager taskManager;
 
 void HAL::HAL_Init() {
 
-    rgb.init();
-    rgb.setBrightness(0.1).setRGB(0, 0, 16, 204).setRGB(1, 0, 122, 104);
     Serial.begin(115200);
+
+
+    /*注册定时器中断*/
+    HAL::Encoder_Init();
+    HAL::timer_init();
+    HAL::RGB_init();
+    HAL::BLE_init();
+
+    //注册任务
+    taskManager.Register(BLE_Update, 2000);
+    taskManager.Register(timerUpdate, 10);
+
+    Serial.printf("init ok\r\n");
 }
 
 void HAL::HAL_Update()
 {
     taskManager.Running(millis());
 }
+

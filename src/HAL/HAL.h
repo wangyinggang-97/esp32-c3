@@ -13,6 +13,10 @@ namespace HAL
     void HAL_Init();
     void HAL_Update();
 
+    /*RGB*/
+    void RGB_init();
+    void RGB_Update();
+    void RGBrandom(int id);
 
     /* Encoder */
     void Encoder_Init();
@@ -20,5 +24,14 @@ namespace HAL
     int32_t Encoder_GetDiff();
     bool Encoder_GetIsPush();
     void Encoder_SetEnable(bool en);
+
+    /*timer*/
+    void timer_init();
+    void timerUpdate();
+
+    /*BLE*/
+    void BLE_init();
+    void BLE_Update();
+
 }
 #endif //ESP32C3_BLE_HAL_H

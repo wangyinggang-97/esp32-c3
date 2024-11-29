@@ -56,7 +56,7 @@
 /* Encoder */
 #define CONFIG_ENCODER_B_PIN        0
 #define CONFIG_ENCODER_A_PIN        1
-#define CONFIG_ENCODER_PUSH_PIN     2
+#define CONFIG_ENCODER_PUSH_PIN     9
 
 /* Power */
 #define CONFIG_POWER_EN_PIN         PA12

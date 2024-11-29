@@ -3,12 +3,11 @@
 //
 #include "main.h"
 
-#define ARDUINO  111
 
-#ifdef ARDUINO
+//#ifdef ARDUINO
 #  include "Arduino.h"
 #  define GET_TICK() millis()
-#endif
+//#endif
 
 #ifndef GET_TICK
 #  error "Please define the GET_TICK() function to get the system time "

@@ -25,10 +25,13 @@ static void Encoder_PushHandler(ButtonEvent* btn, int event)
 {
     if(event == ButtonEvent::EVENT_PRESSED)
     {
+        Serial.printf("key press\r\n");
+        HAL::RGBrandom(1);
         EncoderDiffDisable = true;
     }
     else if(event == ButtonEvent::EVENT_RELEASED)
     {
+        HAL::RGBrandom(0);
         EncoderDiffDisable = false;
     }
     else if(event == ButtonEvent::EVENT_LONG_PRESSED)
